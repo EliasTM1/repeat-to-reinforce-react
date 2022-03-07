@@ -1,54 +1,18 @@
 import React from 'react'
 // * Styles
 import './Homepage.styles.scss'
+//  * Components
+import Todo from '../components/Todo'
 
-const Homepage = () => {
+const Homepage = ({ todo, toggleTodo }) => {
     return (
-        <div className='homepage'>
-            <div className="directory-menu">
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className='title'>Hats</h1>
-                        <span className="subtitle">
-                            SHOW NOW
-                        </span>
-                    </div>
-                </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className='title'>Jackets</h1>
-                        <span className="subtitle">
-                            SHOW NOW
-                        </span>
-                    </div>
-                </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className='title'>Shoes</h1>
-                        <span className="subtitle">
-                            SHOW NOW
-                        </span>
-                    </div>
-                </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className='title'>Women</h1>
-                        <span className="subtitle">
-                            SHOW NOW
-                        </span>
-                    </div>
-                </div>
-                <div className="menu-item">
-                    <div className="content">
-                        <h1 className='title'>Mens</h1>
-                        <span className="subtitle">
-                            SHOW NOW
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        todo.map(todo => {
+            return <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} />
+        })
     )
 }
 
+// <div>
+//     <Todo></Todo>
+// </div>
 export default Homepage
